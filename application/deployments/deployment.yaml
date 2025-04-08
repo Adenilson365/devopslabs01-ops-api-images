@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-images
+  labels:
+    app: api-images
+    pdb: 'true'
+    istio-metrics: 'true'
+    block-especific: 'true'
+  namespace: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-images
+  template:
+    metadata:
+      labels:
+        app: api-images
+        version: v1
+        block-especific: 'true'
+    spec:
+      containers:
+      - name: api-images
+        image: adenilsonkon/devopslabs-api-images:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5001
+        envFrom:
+          - configMapRef:
+              name: telemetry-api-images
+        resources:
+          requests:
+            cpu: 200m
+            memory: 256Mi
+          limits:
+            cpu: 400m
+            memory: 512Mi
