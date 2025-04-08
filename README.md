@@ -9,18 +9,16 @@
 .
 ├── application
 │   ├── config
-│   │   ├── frontend-config.yaml
-│   │   └── frontend-hpa.yaml
+│   │   └── otel-configmap.yaml
 │   ├── deployments
+│   │   └── deployment.yaml
 │   └── services
-│       └── frontend-service.yaml
+│       └── service.yaml
 └── README.md
 
 ```
 
 ### Dependências
-- Aplicação: [api-images](https://github.com/Adenilson365/devopslabs01-api-images)
-- Aplicação: [catalogo](https://github.com/Adenilson365/devopslabs01-catalogo)
 
 ### Aplicar no cluster antes dessa aplicação:
 - Não há
