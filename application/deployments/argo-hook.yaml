@@ -18,7 +18,7 @@ spec:
             - |
               curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage \
                             -d chat_id=${TELEGRAM_CHAT_ID} \
-                            -d text="✅ Sync de api-images iniciada"
+                            -d text="✅ Deploy de api-images iniciada"
 
           env:
             - name: TELEGRAM_TOKEN
@@ -53,7 +53,7 @@ spec:
             - |
               curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage \
                             -d chat_id=${TELEGRAM_CHAT_ID} \
-                            -d text="✅ Sync de api-images Concluído com SUCESSO!"
+                            -d text="✅ Deploy de api-images Concluído com SUCESSO!"
 
           env:
             - name: TELEGRAM_TOKEN
@@ -88,7 +88,7 @@ spec:
             - |
               curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage \
                             -d chat_id=${TELEGRAM_CHAT_ID} \
-                            -d text="❌ Sync de api-images Concluído com FALHAS!"
+                            -d text="❌ Deploy de api-images Concluído com FALHAS!"
 
           env:
             - name: TELEGRAM_TOKEN
