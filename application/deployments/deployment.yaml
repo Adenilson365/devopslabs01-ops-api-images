@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: api-images
-          image: adenilsonkon/devopslabs-api-images:dev-a40804f
+          image: adenilsonkon/devopslabs-api-images:dev-a4080
           imagePullPolicy: Always
           ports:
             - containerPort: 5001
