@@ -4,9 +4,9 @@ metadata:
   name: api-images
   labels:
     app: api-images
-    pdb: 'true'
-    istio-metrics: 'true'
-    block-especific: 'true'
+    pdb: "true"
+    istio-metrics: "true"
+    block-especific: "true"
   namespace: api
 spec:
   replicas: 1
@@ -18,21 +18,21 @@ spec:
       labels:
         app: api-images
         version: v1
-        block-especific: 'true'
+        block-especific: "true"
     spec:
       containers:
-      - name: api-images
-        image: adenilsonkon/devopslabs-api-images:dev-560fdf3c01a3fad8351eb50df5320a9e8ba005ee
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 5001
-        envFrom:
-          - configMapRef:
-              name: telemetry-api-images
-        resources:
-          requests:
-            cpu: 200m
-            memory: 256Mi
-          limits:
-            cpu: 400m
-            memory: 512Mi
+        - name: api-images
+          image: adenilsonkon/devopslabs-api-images:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5001
+          envFrom:
+            - configMapRef:
+                name: telemetry-api-images
+          resources:
+            requests:
+              cpu: 200m
+              memory: 256Mi
+            limits:
+              cpu: 400m
+              memory: 512Mi
